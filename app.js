@@ -1,31 +1,35 @@
-console.log("Lab 03 - NodeJS Setup Successful!");
+// console.log("Lab 03 - NodeJS Setup Successful!");
 
-const fs = require('fs');
+// const fs = require('fs');
 
-fs.readFile('file.txt', 'utf8', function (err, data) {
-  if (err) throw err;
-  console.log(data);
+// fs.readFile('file.txt', 'utf8', function (err, data) {
+//   if (err) throw err;
+//   console.log(data);
+// });
+
+
+// fs.writeFile('file.txt', 'Hello World!', function (err) {
+//   if (err) throw err;
+//   console.log('File saved!');
+// });
+
+// const myModule = require('./my-module.js');
+// console.log(myModule.myFunction());
+
+const condition = true;
+
+const myPromise = new Promise((resolve, reject) => {
+  if (condition) {
+    resolve('Success!');
+  } else {
+    reject('Failure!');
+  }
 });
 
-
-fs.writeFile('file.txt', 'Hello World!', function (err) {
-  if (err) throw err;
-  console.log('File saved!');
-});
-
-const https = require('https');
-
-https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
-  let data = '';
-
-  resp.on('data', (chunk) => {
-    data += chunk;
+myPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
   });
-
-  resp.on('end', () => {
-    console.log(JSON.parse(data));
-  });
-
-}).on('error', (err) => {
-  console.log("Error: " + err.message);
-});
