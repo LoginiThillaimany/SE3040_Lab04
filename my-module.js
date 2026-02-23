@@ -1,6 +1,7 @@
-// exports.myFunction = function () {
-//   return "Hello from My Module!";
-// };
+// <<<<<<< feature/yourname/async-await
+// // exports.myFunction = function () {
+// //   return "Hello from My Module!";
+// // };
 
 const condition = true;
 
@@ -22,3 +23,8 @@ async function myFunction() {
 }
 
 myFunction();
+//=======
+// exports.myFunction = function () {
+//   return "Hello from My Module!";
+// };
+// >>>>>>> main
